@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T-Shirt Costing Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 py-10">
+    <div class="container mx-auto max-w-lg bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4 text-center">T-Shirt Costing Calculator</h1>
+        <form id="costForm" class="space-y-4">
+            <div>
+                <label class="block font-medium" for="rate">Fabric Rate (per kg)</label>
+                <input class="mt-1 w-full border rounded px-3 py-2" type="number" id="rate" required />
+            </div>
+            <div>
+                <label class="block font-medium" for="gsm">GSM</label>
+                <input class="mt-1 w-full border rounded px-3 py-2" type="number" id="gsm" required />
+            </div>
+            <div>
+                <label class="block font-medium" for="consumption">Fabric Consumption (grams per piece)</label>
+                <input class="mt-1 w-full border rounded px-3 py-2" type="number" id="consumption" required />
+            </div>
+            <div>
+                <label class="block font-medium" for="rib">Rib Cost per piece</label>
+                <input class="mt-1 w-full border rounded px-3 py-2" type="number" id="rib" value="5" />
+            </div>
+            <div>
+                <label class="block font-medium" for="baju">Baju Pachi Cost (optional)</label>
+                <input class="mt-1 w-full border rounded px-3 py-2" type="number" id="baju" />
+            </div>
+            <div>
+                <label class="block font-medium" for="margin">Margin %</label>
+                <input class="mt-1 w-full border rounded px-3 py-2" type="number" id="margin" value="26" />
+            </div>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded w-full" type="submit">Calculate</button>
+        </form>
+        <div id="results" class="mt-6 hidden">
+            <h2 class="text-xl font-semibold mb-2">Results</h2>
+            <p id="fabricCost" class="mb-1"></p>
+            <p id="totalCost" class="mb-1"></p>
+            <p id="finalPrice" class="font-bold"></p>
+        </div>
+    </div>
+<script>
+    document.getElementById('costForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const rate = parseFloat(document.getElementById('rate').value) || 0;
+        const gsm = parseFloat(document.getElementById('gsm').value) || 0;
+        const consumption = parseFloat(document.getElementById('consumption').value) || 0;
+        const rib = parseFloat(document.getElementById('rib').value) || 0;
+        const baju = parseFloat(document.getElementById('baju').value) || 0;
+        const margin = parseFloat(document.getElementById('margin').value) || 0;
+
+        const fabricCost = (gsm * consumption / 1000) * rate;
+        const totalCost = fabricCost + rib + baju;
+        const finalPrice = totalCost + (totalCost * margin / 100);
+
+        document.getElementById('fabricCost').textContent = `Fabric Cost: ₹${fabricCost.toFixed(2)}`;
+        document.getElementById('totalCost').textContent = `Total Cost: ₹${totalCost.toFixed(2)}`;
+        document.getElementById('finalPrice').textContent = `Final Price: ₹${finalPrice.toFixed(2)}`;
+        document.getElementById('results').classList.remove('hidden');
+    });
+</script>
+</body>
+</html>
