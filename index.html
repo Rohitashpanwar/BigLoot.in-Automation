@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigLoot.in - Loot Deals & Offers</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <h1>BigLoot<span>.in</span></h1>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for deals...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <nav>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Amazon Deals</a></li>
+                    <li><a href="#">Flipkart Deals</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#" class="telegram"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Loot Deals & Offers of The Day</h2>
+            <p>Handpicked deals from Amazon & Flipkart to help you save more.</p>
+        </div>
+    </section>
+
+    <section class="categories container">
+        <div class="category-grid">
+            <div class="category-item"><i class="fas fa-mobile-alt"></i><span>Mobiles</span></div>
+            <div class="category-item"><i class="fas fa-laptop"></i><span>Electronics</span></div>
+            <div class="category-item"><i class="fas fa-tshirt"></i><span>Fashion</span></div>
+            <div class="category-item"><i class="fas fa-home"></i><span>Home</span></div>
+            <div class="category-item"><i class="fas fa-shopping-basket"></i><span>Grocery</span></div>
+            <div class="category-item"><i class="fas fa-book"></i><span>Books</span></div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="deals-section">
+            <div class="section-header">
+                <h3>Latest Loot Deals</h3>
+                <div class="filter-options">
+                    <button class="active">All</button>
+                    <button>Amazon</button>
+                    <button>Flipkart</button>
+                </div>
+            </div>
+            <div class="deals-grid" id="deals-container">
+                <!-- Deals will be injected here by JS -->
+            </div>
+            <div class="pagination">
+                <button disabled>&laquo; Prev</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>Next &raquo;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>BigLoot.in</h4>
+                <p>Your one-stop destination for the best loot deals and offers in India.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="footer-section newsletter">
+                <h4>Newsletter</h4>
+                <p>Subscribe to get the latest deals.</p>
+                <form>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BigLoot.in. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
